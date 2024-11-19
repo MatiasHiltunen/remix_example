@@ -1,4 +1,5 @@
 import {
+  Link,
   Links,
   Meta,
   Outlet,
@@ -41,5 +42,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return <div className="flex flex-col items-center h-[100dvh] bg-blue-400">
+
+    <nav className="flex items-center gap-4 w-full min-h-12 bg-blue-800 mb-4 pl-4">
+      <Link to={"/"}> Koti </Link>
+      <Link to={"/contacts/1"}> Kontakti 1</Link>
+    </nav>
+
+    <Outlet />
+  </div>
+  
 }
